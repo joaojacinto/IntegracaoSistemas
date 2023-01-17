@@ -40,6 +40,23 @@ class Agents {
         parent.appendChild(divColElem);
     }
 
+    #drawTable(parent) {
+        const divColElem = document.createElement("div");
+        divColElem.setAttribute("class", "col-sm-10");
+
+        const tableElem = document.createElement("table");
+        tableElem.setAttribute("class", "table");
+
+        const tableBody = document.createElement("tbody");
+        
+        tableElem.appendChild(tableBody);
+        divColElem.appendChild(tableElem);
+        parent.appendChild(divColElem);
+
+        //faz return ao body da tabela
+        return tableBody;
+    }
+
 
     #addAttribute(label, value, parent) {
         const tr = document.createElement("tr");
