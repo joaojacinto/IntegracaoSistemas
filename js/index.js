@@ -1,4 +1,9 @@
 "use strict"
+window.addEventListener("load", () => {
+    console.log("Olá Mundo!");
+    fetchAgents();
+})
+
 
 function callAPI(url, callback) {
     const xhttp = new XMLHttpRequest();
@@ -23,7 +28,7 @@ function fetchAgents() {
     callAPI("https://valorant-api.com/v1/agents", (agents) => {
         console.log(agents);
 
-        agents.forEach(data => {
+        Array.from(agents).forEach(data => {
             const agent = new Agents(
                 data.displayName, 
                 data.description, 
@@ -35,9 +40,3 @@ function fetchAgents() {
         })
     })
 }
-
-
-window.addEventListener("load", () => {
-    console.log("Olá Mundo!");
-    fetchAgents();
-})
