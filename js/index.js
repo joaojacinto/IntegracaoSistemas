@@ -28,7 +28,8 @@ function fetchAgents() {
     callAPI("https://valorant-api.com/v1/agents", (agents) => {
         console.log(agents);
 
-        Array.from(agents).forEach(data => {
+        agents.data.forEach(data => {
+            console.log(data)
             const agent = new Agents(
                 data.displayName, 
                 data.description, 
@@ -36,6 +37,7 @@ function fetchAgents() {
                 data.role, 
                 data.abilities  
             );
+            console.log(agent)
             agent.draw(containerElement);
         })
     })

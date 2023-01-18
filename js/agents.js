@@ -9,6 +9,7 @@ class Agents {
 
 
     draw(container) {
+        console.log("Draw agent")
         // const containerNav = document.createElement("div");
         // containerNav.innerHTML = this.#drawNavBar(containerNav);
 
@@ -24,6 +25,7 @@ class Agents {
         this.#addAttribute("Role: ", this.role, tableBodyElem);
         this.#addAttribute("Abilities: ", this.abilities, tableBodyElem);
 
+        console.log(characterElem)
         container.appendChild(characterElem);
     }
 
