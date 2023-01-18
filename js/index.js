@@ -1,19 +1,10 @@
 "use strict"
+
+
 window.addEventListener("load", () => {
     console.log("Olá Mundo!");
     fetchAgents();
 })
-
-
-function callAPI(url, callback) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", url, true);
-    xhttp.setRequestHeader("Accept", "application/json");
-    xhttp.onload = () => {
-        callback(JSON.parse(xhttp.responseText));
-    }
-    xhttp.send();
-}
 
 
 function fetchAgents() {
@@ -29,16 +20,25 @@ function fetchAgents() {
         console.log(agents);
 
         agents.data.forEach(data => {
-            console.log(data)
             const agent = new Agents(
                 data.displayName, 
                 data.description, 
                 data.fullPortrait, 
-                data.role, 
-                data.abilities  
+                data.role.displayName,
+                data.abilities.map(ability => ability.displayIcon), 
+                data.abilities.map(ability => ability.displayName)
             );
-            console.log(agent)
             agent.draw(containerElement);
         })
     })
+}
+
+function callAPI(url, callback) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.setRequestHeader("Accept", "application/json");
+    xhttp.onload = () => {
+        callback(JSON.parse(xhttp.responseText));
+    }
+    xhttp.send();
 }
