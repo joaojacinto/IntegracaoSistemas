@@ -16,26 +16,25 @@ class Agents {
         const characterElem = document.createElement("div");
         characterElem.setAttribute("class", "row");
 
-        characterElem.appendChild(this.#drawImage(this.fullPortrait))
+        characterElem.appendChild(this.#drawImage(this.fullPortrait, false))
         
         const tableBodyElem = this.#drawTable(characterElem);
 
         this.#addAttribute("Name: ", this.displayName, tableBodyElem);
         this.#addAttribute("Descrição: ", this.description, tableBodyElem);
-        this.#addAttribute("Image: ", this.fullPortrait, tableBodyElem);
         this.#addAttribute("Role: ", this.role, tableBodyElem);
-        this.#addAttribute("Icons: ", this.displayIcon.map(icon => this.#drawImage(icon).innerHTML), tableBodyElem);
+        this.#addAttribute("Icons: ", this.displayIcon.map(icon => this.#drawImage(icon, true).innerHTML), tableBodyElem);
         this.#addAttribute("Abilities: ", this.abilities, tableBodyElem);
 
         container.appendChild(characterElem);
     }
 
-    #drawImage(url) {
+    #drawImage(url, isIcon = false) {
         const divColElem = document.createElement("div");
         divColElem.setAttribute("class", "col-sm-2");
 
         const imgElem = document.createElement("img");
-        imgElem.setAttribute("class", "img-thumbnail");
+        imgElem.setAttribute("class", "img-thumbnail" +(isIcon?" icon":""));
         imgElem.setAttribute("src", url);
 
         
