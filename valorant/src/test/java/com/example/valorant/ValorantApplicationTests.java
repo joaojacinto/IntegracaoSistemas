@@ -1,10 +1,10 @@
-package com.example.valorant_db;
+package com.example.valorant;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ValorantDbApplicationTests {
+class ValorantApplicationTests {
 
 	@Test
 	void contextLoads() {

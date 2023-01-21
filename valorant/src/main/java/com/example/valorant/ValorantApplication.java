@@ -1,13 +1,13 @@
-package com.example.valorant_db;
+package com.example.valorant;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ValorantDbApplication {
+public class ValorantApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ValorantDbApplication.class, args);
+		SpringApplication.run(ValorantApplication.class, args);
 	}
 
 }
