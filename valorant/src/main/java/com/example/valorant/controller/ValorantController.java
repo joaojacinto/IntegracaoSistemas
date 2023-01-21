@@ -25,7 +25,7 @@ public class ValorantController {
     }
 
     @PostMapping("/valorant")
-    public ValorantClass createUser(@RequestBody ValorantClass valorantClass) {
+    public ValorantClass createValorantClass(@RequestBody ValorantClass valorantClass) {
         return ValorantService.save(valorantClass);
     }
 }
