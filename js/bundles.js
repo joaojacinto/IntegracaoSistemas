@@ -1,11 +1,8 @@
-class Agents {
-    constructor(displayName, description, fullPortrait, role, displayIcon, abilities){
+class Bundles {
+    constructor(displayName, description, displayIcon){
         this.displayName = displayName;
         this.description = description;
-        this.fullPortrait = fullPortrait;
-        this.role = role;
         this.displayIcon = displayIcon;
-        this.abilities = abilities;
     }
     
 
@@ -17,22 +14,20 @@ class Agents {
         const characterElem = document.createElement("div");
         characterElem.setAttribute("class", "row");
 
-        characterElem.appendChild(this.#drawImage(this.fullPortrait, false))
+        characterElem.appendChild(this.#drawImage(this.displayIcon, false))
         
         const tableBodyElem = this.#drawTable(characterElem);
 
+    
         this.#addAttribute("Name: ", this.displayName, tableBodyElem);
         this.#addAttribute("Description: ", this.description, tableBodyElem);
-        this.#addAttribute("Role: ", this.role, tableBodyElem);
-        this.#addAttribute("Icons: ", this.displayIcon.map(icon => this.#drawImage(icon, true).innerHTML), tableBodyElem);
-        this.#addAttribute("Abilities: ", this.abilities, tableBodyElem);
 
         container.appendChild(characterElem);
     }
 
     #drawImage(url, isIcon = false) {
         const divColElem = document.createElement("div");
-        divColElem.setAttribute("class", "col-sm-2");
+        divColElem.setAttribute("class", "float-child", "col-sm-2");
 
         const imgElem = document.createElement("img");
         imgElem.setAttribute("class", "img-thumbnail" +(isIcon?" icon":""));

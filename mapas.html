@@ -30,6 +30,12 @@
             height: 50px;
         }
 
+        tr{
+            margin-left: 150px;
+            margin-right: 100px;
+            display: inline;
+        }
+
         th{
             font-size: 20px;
             text-align: left;
@@ -38,6 +44,12 @@
         td{
             font-size: 20px;
             text-align: left;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
         }
     </style>
 
@@ -78,12 +90,12 @@
                 <span class="tooltip">Ranks</span>
             </li>
             <li class="features-item trash">
-                <i class="bx bx-credit-card-alt features-item-icon"></i>
+                <i class="bx bx-trash features-item-icon"></i>
                 <span class="features-item-text">Weapons & Skins</span>
                 <span class="tooltip">Weapons & Skins</span>
             </li>
             <li class="features-item spam">
-                <i class="bx bx-crosshair features-item-icon"></i>
+                <i class="bx bx-message-square-error features-item-icon"></i>
                 <span class="features-item-text">Game Modes</span>
                 <span class="tooltip">Game Modes</span>
             </li>
@@ -91,7 +103,7 @@
     </div>
 
     <div class="container2">
-        <h1>Agents</h1>
+        <h1>Maps</h1>
         <div id="container"></div>
     </div>
 
@@ -111,8 +123,8 @@
             };
         }
     </script>
-    <script src="js/agents.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/maps.js"></script>
 
 </body>
 

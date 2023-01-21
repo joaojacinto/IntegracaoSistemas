@@ -4,6 +4,8 @@
 window.addEventListener("load", () => {
     console.log("Olá Mundo!");
     fetchAgents();
+    fetchMaps();
+    fetchBundles();
 })
 
 
@@ -14,9 +16,8 @@ function fetchAgents() {
 
     const containerElement = document.getElementById("container");
     containerElement.innerHTML = "";
-    
 
-    callAPI("https://valorant-api.com/v1/agents", (agents) => {
+    callAPI("https://valorant-api.com/v1/agents?isPlayableCharacter=true", (agents) => {
         console.log(agents);
 
         agents.data.forEach(data => {
@@ -24,11 +25,56 @@ function fetchAgents() {
                 data.displayName, 
                 data.description, 
                 data.fullPortrait, 
-                data.role.displayName,
+                data.role?.displayName,
                 data.abilities.map(ability => ability.displayIcon), 
                 data.abilities.map(ability => ability.displayName)
             );
             agent.draw(containerElement);
+        })
+    })
+}
+
+function fetchMaps() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("https://valorant-api.com/v1/maps", (maps) => {
+        console.log(maps);
+
+        maps.data.forEach(data => {
+            const map = new Maps(
+                data.displayName, 
+                data.coordinates, 
+                data.splash,
+                data.displayIcon 
+            );
+            map.draw(containerElement);
+        })
+    })
+}
+
+function fetchBundles() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("https://valorant-api.com/v1/bundles", (bundles) => {
+        console.log(bundles);
+
+        bundles.data.forEach(data => {
+            const bundle = new Bundles(
+                data.displayName, 
+                data.description, 
+                data.displayIcon 
+            );
+            bundle.draw(containerElement);
         })
     })
 }
