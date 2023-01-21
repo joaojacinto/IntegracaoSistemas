@@ -1,7 +1,7 @@
 # IntegracaoSistemas
 O nosso tema vai ser Valorant API
 Integraçao de API externa em frontend.
-O nosso site irá conter agentes, mapas, bundles, comp tier, armas & skins, top 10 leaderboard, game modes, eventos eSports.
+O nosso site irá conter agentes, mapas, bundles, comp tier, armas & skins, top 10 leaderboard, game modes.
 
 Iremos fazer um perfil de agentes com as suas abilidades e detalhes das mesmas, imagem do agente e role.
 
