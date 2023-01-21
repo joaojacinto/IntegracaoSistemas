@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
     fetchAgents();
     fetchMaps();
     fetchBundles();
+    fetchWeapons();
+    fetchGamemodes();
 })
 
 
@@ -26,7 +28,7 @@ function fetchAgents() {
                 data.description, 
                 data.fullPortrait, 
                 data.role?.displayName,
-                data.abilities.map(ability => ability.displayIcon), 
+                data.abilities.map(ability => ability?.displayIcon), 
                 data.abilities.map(ability => ability.displayName)
             );
             agent.draw(containerElement);
@@ -75,6 +77,51 @@ function fetchBundles() {
                 data.displayIcon 
             );
             bundle.draw(containerElement);
+        })
+    })
+}
+
+function fetchWeapons() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("https://valorant-api.com/v1/weapons", (weapons) => {
+        console.log(weapons);
+
+        weapons.data.forEach(data => {
+            const weapon = new Weapons(
+                data.displayName, 
+                data.shopData.category, 
+                data.shopData.cost,
+                data.displayIcon
+            );
+            weapon.draw(containerElement);
+        })
+    })
+}
+
+function fetchGamemodes() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("https://valorant-api.com/v1/gamemodes", (gamemodes) => {
+        console.log(gamemodes);
+
+        gamemodes.data.forEach(data => {
+            const gamemode = new Gamemodes(
+                data.displayName, 
+                data.duration, 
+                data.displayIcon
+            );
+            gamemode.draw(containerElement);
         })
     })
 }
