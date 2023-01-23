@@ -126,6 +126,27 @@ function fetchGamemodes() {
     })
 }
 
+function fetchRanks() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("valorantapi.000webhostapp.com/api/ranks", (ranks) => {
+        console.log(ranks);
+
+        ranks.data.forEach(data => {
+            const rank = new Ranks(
+                data.tierName, 
+                data.iconTierFile
+            );
+            rank.draw(containerElement);
+        })
+    })
+}
+
 function callAPI(url, callback) {
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
@@ -133,5 +154,5 @@ function callAPI(url, callback) {
     xhttp.onload = () => {
         callback(JSON.parse(xhttp.responseText));
     }
-    xhttp.send();
+    xhttp.send();[]
 }

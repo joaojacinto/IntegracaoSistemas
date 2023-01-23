@@ -1,8 +1,7 @@
-class Bundles {
-    constructor(tierName, divisionName, displayIcon){
-        this.displayName = displayName;
-        this.description = description;
-        this.displayIcon = displayIcon;
+class Ranks {
+    constructor(tierName, iconTierFile){
+        this.tierName = tierName;
+        this.iconTierFile = iconTierFile;
     }
     
 
@@ -14,13 +13,13 @@ class Bundles {
         const characterElem = document.createElement("div");
         characterElem.setAttribute("class", "row");
 
-        characterElem.appendChild(this.#drawImage(this.displayIcon, false))
+        characterElem.appendChild(this.#drawImage(this.iconTierFile, false))
         
         const tableBodyElem = this.#drawTable(characterElem);
 
     
-        this.#addAttribute("Name: ", this.displayName, tableBodyElem);
-        this.#addAttribute("Description: ", this.description, tableBodyElem);
+        this.#addAttribute("Name: ", this.tierName, tableBodyElem);
+        //this.#addAttribute("Icon: ", this.iconTierFile, tableBodyElem);
 
         container.appendChild(characterElem);
     }
