@@ -134,7 +134,7 @@ function fetchRanks() {
     const containerElement = document.getElementById("container");
     containerElement.innerHTML = "";
 
-    callAPI("valorantapi.000webhostapp.com/api/ranks", (ranks) => {
+    callAPI("http://localhost:8080/api/ranks", (ranks) => {
         console.log(ranks);
 
         ranks.data.forEach(data => {
