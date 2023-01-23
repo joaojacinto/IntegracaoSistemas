@@ -1,0 +1,60 @@
+{
+    "displayName": "SEN zekken",
+    "rating": "1.259",
+    "tier": "Radiant",
+    "wins": "179"
+}
+{
+    "displayName": "aika",
+    "rating": "1.162",
+    "tier": "Radiant",
+    "wins": "153"
+}
+{
+    "displayName": "add3r",
+    "rating": "1.162",
+    "tier": "Radiant",
+    "wins": "153"
+}
+{
+    "displayName": "wedid",
+    "rating": "1.160",
+    "tier": "Radiant",
+    "wins": "144"
+}
+{
+    "displayName": "BabyJ",
+    "rating": "1.132",
+    "tier": "Radiant",
+    "wins": "234"
+}
+{
+    "displayName": "100T Asuna",
+    "rating": "1.126",
+    "tier": "Radiant",
+    "wins": "158"
+}
+{
+    "displayName": "curry",
+    "rating": "1.126",
+    "tier": "Radiant",
+    "wins": "215"
+}
+{
+    "displayName": "Cryocells",
+    "rating": "1.093",
+    "tier": "Radiant",
+    "wins": "142"
+}
+{
+    "displayName": "G2 LFT OXY",
+    "rating": "1.047",
+    "tier": "Radiant",
+    "wins": "212"
+}
+{
+    "displayName": "N4RRATE",
+    "rating": "1.045",
+    "tier": "Radiant",
+    "wins": "288"
+}
