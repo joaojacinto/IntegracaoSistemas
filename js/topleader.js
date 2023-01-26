@@ -1,11 +1,10 @@
 class TopLeader {
-    constructor(rank, displayName, rating, tier, wins, displayIcon){
-        this.rank = rank;
+    constructor(id, displayName, rating, tier, wins){
+        this.id = id;
         this.displayName = displayName;
         this.rating = rating;
         this.tier = tier;
         this.wins = wins;
-        this.displayIcon = displayIcon;
     }
     
 
@@ -16,12 +15,10 @@ class TopLeader {
 
         const characterElem = document.createElement("div");
         characterElem.setAttribute("class", "row");
-
-        characterElem.appendChild(this.#drawImage(this.displayIcon, false))
         
         const tableBodyElem = this.#drawTable(characterElem);
 
-        this.#addAttribute("Rank: ", this.rank, tableBodyElem);
+        this.#addAttribute("Position: ", this.id, tableBodyElem);
         this.#addAttribute("Name: ", this.displayName, tableBodyElem);
         this.#addAttribute("Rating: ", this.rating, tableBodyElem);
         this.#addAttribute("Tier: ", this.tier, tableBodyElem);

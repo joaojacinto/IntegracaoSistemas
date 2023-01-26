@@ -162,7 +162,7 @@ function fetchLeader() {
 
         leader.forEach(data => {
             const leaders = new TopLeader(
-                 
+                data.id, 
                 data.displayName,
                 data.rating,
                 data.tier,
