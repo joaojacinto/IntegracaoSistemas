@@ -8,6 +8,8 @@ window.addEventListener("load", () => {
     fetchBundles();
     fetchWeapons();
     fetchGamemodes();
+    fetchRanks();
+    fetchLeader();
 })
 
 
@@ -137,12 +139,36 @@ function fetchRanks() {
     callAPI("http://localhost:8080/api/ranks", (ranks) => {
         console.log(ranks);
 
-        ranks.data.forEach(data => {
+        ranks.forEach(data => {
             const rank = new Ranks(
                 data.tierName, 
                 data.iconTierFile
             );
             rank.draw(containerElement);
+        })
+    })
+}
+
+function fetchLeader() {
+    // const containerNav = document.getElementById("navbar");
+    // containerNav.innerHTML = "";
+
+
+    const containerElement = document.getElementById("container");
+    containerElement.innerHTML = "";
+
+    callAPI("http://localhost:8080/api/leader", (leader) => {
+        console.log(leader);
+
+        leader.forEach(data => {
+            const leaders = new TopLeader(
+                 
+                data.displayName,
+                data.rating,
+                data.tier,
+                data.wins
+            );
+            leaders.draw(containerElement);
         })
     })
 }

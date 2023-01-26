@@ -2,18 +2,20 @@ package com.example.valorant_backend.Controller;
 
 import com.example.valorant_backend.Model.Ranks;
 import com.example.valorant_backend.Service.RanksServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/ranks")
 public class RanksController {
 
     private RanksServiceInterface ranksServiceInterface;
 
+    @Autowired
     public RanksController(RanksServiceInterface ranksServiceInterface) {
         this.ranksServiceInterface = ranksServiceInterface;
     }
