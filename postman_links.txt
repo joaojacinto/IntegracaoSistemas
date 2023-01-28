@@ -1,0 +1,33 @@
+POSTMAN LINKS:
+
+POST RANKS: (com metodo POST)
+http://localhost:8080/api/ranks
+
+GET ALL RANKS: (com metodo GET)
+http://localhost:8080/api/ranks
+
+GET RANKS BY ID: (com metodo GET)
+http://localhost:8080/api/ranks/2
+
+UPDATE RANKS atraves do ID: (com metodo PUT)
+http://localhost:8080/api/ranks/2
+
+DELETE RANKS by id: (com metodo DELETE)
+http://localhost:8080/api/ranks/1
+
+
+
+POST LEADER: (com metodo POST)
+http://localhost:8080/api/leader
+
+GET ALL RANKS: (com metodo GET)
+http://localhost:8080/api/leader
+
+GET RANKS BY ID: (com metodo GET)
+http://localhost:8080/api/leader/2
+
+UPDATE RANKS atraves do ID: (com metodo PUT)
+http://localhost:8080/api/leader/2
+
+DELETE RANKS by id: (com metodo DELETE)
+http://localhost:8080/api/leader/1
